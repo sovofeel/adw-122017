@@ -1,0 +1,44 @@
+.content
+    .content__left
+        .page__title
+            +svg('page__title-bg', 'about_header')
+            .page__title-line
+            h1.page__title-text Обо мне
+            .page__title-line
+        .page__about
+            .page__about-avatar
+                img(src="img/avatar2.jpg", alt="avatar")
+            .page__about-text
+                .page__about-title
+                    .page__title-line
+                    h3.page__title-text Кто я
+                    .page__title-line
+                .page__about-desc
+                    p.page__about-paragraph Я веб разработчик из  %CITY_NAME%. Мне %AGE%. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                    p.page__about-paragraph Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+
+    .content__right
+        .page__skills-title
+            .page__title-line
+            h2.page__title-text Чем я могу быть вам полезен
+            .page__title-line
+        .page__skills-desc Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+
+        .skills
+            .skills__row.fronend
+                .skills__title Frontend
+                +skillProgress('HTML','60')
+                +skillProgress('CSS3','70')
+                +skillProgress('Javascript & JQuery','30')
+            .skills__row.backend
+                .skills__title Backend
+                +skillProgress('PHP','10')
+                +skillProgress('mySQL','15')
+                +skillProgress('Node.js & npm','20')
+                +skillProgress('Mongo.db','5')
+            .skills__row.workflow
+                .skills__title WorkFlow
+                +skillProgress('Git','60')
+                +skillProgress('Gulp','70')
+                +skillProgress('Webpack','40')

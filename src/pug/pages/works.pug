@@ -1,0 +1,13 @@
+extends ../template
+
+block variables
+    - var title = 'Мои работы'
+    - var secClass = 'div class="menu__line"'
+    - var page = 'works'
+
+block content
+    .wrapper
+        include ../common/works/header
+        include ../common/works/content
+        include ../common/works/footer
+        

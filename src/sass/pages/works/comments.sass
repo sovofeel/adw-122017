@@ -1,0 +1,134 @@
+.comments
+    @extend %flex-center
+    flex-direction: column
+    width: 100%
+    margin-bottom: 50px
+    @include phone
+        margin-bottom: 20px
+    &__title
+        @extend %flex-center
+        align-items: flex-start
+        position: relative
+        width: 100%
+        padding: 60px 0
+        @include tablet
+            align-items: center
+            padding: 40px 0
+        @include phone
+            padding: 30px 0 20px 0
+        &-text
+            font-family: 'bernier', sans-serif
+            font-weight: 300
+            font-size: 60px
+            color: $color-night
+            line-height: 1.05
+            letter-spacing: 1px
+            width: 280px
+            text-align: center
+            @include tablet
+                font-size: 46px
+                width: 370px
+            @include phone
+                font-size: 33px
+                line-height: 1.3
+                width: 180px
+        &-line
+            width: 22px
+            height: 5px
+            margin: 25px 16px
+            background: fade-out($color-night, 0.8)
+            @include tablet
+                margin: 0 16px
+            @include phone
+                margin: 0 5px
+        &-bg
+            @extend %absolute-center
+            top: 45%
+            fill: fade-out($color-night, 0.92)
+            width: 500px
+            height: 400px
+            @include tablet
+                width: 300px
+                height: 200px
+            @include phone
+                width: 250px
+                height: 100px
+
+    &__views
+        @extend %flex-center
+        align-items: initial
+        max-width: 100%
+        @include phone
+            flex-direction: column
+
+
+.comment
+    width: 380px
+    margin: 0 10px
+    @include tablet
+        width: 50%
+        max-width: 350px
+    @include phone
+        padding: 0 10px
+        margin: 0
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-bottom: 15px
+
+    &__text
+        flex: 1
+        font-family: 'roboto', sans-serif
+        font-size: 16px
+        font-weight: 400
+        margin-bottom: 20px
+        line-height: 1.6
+        max-width: 100%
+        @include ie
+            min-height: 70px
+        @include tablet
+            font-size: 14px
+            margin-top: 5px 
+            line-height: 1.7
+            margin-bottom: 15px
+        @include phone
+            line-height: 1.8
+            margin-bottom: 15px
+            margin-top: 8px
+    &__ico
+        width: 30px
+        height: 30px
+        fill: fade-out($color-night, 0.8)
+        margin-bottom: 3px
+        @include tablet
+            width: 33px
+            height: 33px
+        @include phone
+            
+    &__person
+        display: flex
+        align-items: center
+        @include phone
+            align-self: flex-start
+        &-avatar
+            background: $color-white
+            width: 80px
+            height: 80px
+            border-radius: 50%
+            @include phone
+                width: 50px
+                height: 50px
+        &-desc
+            margin-left: 20px
+            display: flex
+            flex-direction: column
+            font-family: 'roboto', sans-serif
+            color: $color-aqua
+            font-size: 16px
+            @include tablet
+                font-size: 14px
+        &-name
+            font-weight: 500
+        &-prof
+            font-weight: 400

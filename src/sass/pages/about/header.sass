@@ -1,0 +1,58 @@
+.header
+    width: 100vw
+    height: 100vh
+    // height: 700px
+    @extend %flex-center
+    position: relative
+    &__bg
+        width: 90%
+        height: 300px
+        @extend %absolute-center
+        &-text
+            fill: fade-out($color-white, 0.95)
+            width: 100%
+            height: 100%
+    &__triangles
+        position: absolute
+        left: 0
+        bottom: 0
+        width: 100%
+
+.person
+    @extend %flex-center
+    flex-direction: column
+    // height: 100%
+    z-index: 1
+    padding-bottom: 34px
+    @include phone 
+    padding-bottom: 74px
+    &__avatar
+        width: 140px
+        height: 140px
+        margin-bottom: 20px
+        background: #ffffff
+        border-radius: 50%
+        overflow: hidden
+        @include phone
+            margin-bottom: 26px
+    &__name
+        font-family: 'roboto', sans-serif
+        font-weight: 500
+        font-size: rem(34px)
+        margin-bottom: 0px
+        color: $color-white
+        @include phone
+            font-size: 22px
+            margin-bottom: 3px
+    &__desc
+        font-family: 'roboto', sans-serif
+        font-weight: 400
+        font-size: rem(16px)
+        margin-bottom: 30px
+        color: $color-white
+
+.header__triangle-right
+    border-color: transparent transparent $color-white2 transparent;
+    @include tablet
+        border-color: transparent transparent $color-white transparent;
+

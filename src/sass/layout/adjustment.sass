@@ -1,0 +1,453 @@
+
+
+html
+    font-size: 16px
+    font-family: Arial, Helvetica, sans-serif
+    font-weight: 500
+    cursor: default
+    line-height: 1.42
+    @include phone
+        font-size: 14px
+
+body
+    background: $color-white
+
+input
+    -webkit-border-radius: 0
+    border-radius: 0
+button
+    margin: 0
+
+.wrapper
+    width: 100%
+    height: 100%
+    margin: 0 auto
+    overflow: hidden
+
+.container
+    width: 100%
+    height: 100%
+
+.header
+    width: 100vw
+    height: 100vh
+    position: relative
+    min-height: 500px
+    @extend %bg-config
+    @include tablet
+        background-image: url('../img/mountains/bg.jpg')
+
+.welcome
+    min-height: 500px
+    @extend %bg-config
+    @include tablet
+        background-image: url('../img/mountains/bg.jpg')
+.hamburger
+    position: absolute
+    top: 40px
+    right: 18.4%
+    cursor: pointer
+    width: 40px
+    height: 40px
+    z-index: 120
+    @include desktop
+        right: 30px
+    @include phone
+        right: 0px
+        top: 5px
+    &__list
+        position: relative
+        width: 100%
+        height: 100%
+    &__line
+        position: absolute
+        width: 40px
+        height: 5px
+        background: $color-white
+        border-radius: 2px
+        transition: 0.3s
+        @include phone
+            height: 3px
+            width: 26px
+        &--one
+            top: 0px
+            left: 0
+            @include phone
+                top: 5px
+        &--two
+            top: 15px
+            left: 0
+            @include phone
+                top: 15px
+        &--three
+            left: 0
+            top: 30px
+            @include phone
+                top: 25px
+    &--active
+        .hamburger__line
+            &--one
+                transform: rotate(45deg)
+                top: 15px
+                // left: 5px
+            &--two
+                opacity: 0
+                top: 15px
+                // left: 5px
+            &--three
+                transform: rotate(-45deg)
+                top: 15px
+                // left: 5px
+
+.menu
+    position: fixed
+    top: 0
+    left: -9999px
+    width: 100vw
+    height: 105vh
+    z-index: 100
+    display: flex
+    // background: fade-out($color-aqua, 0.1)
+
+    &__list
+        @extend %flex-center
+        flex-direction: column
+        width: 100%
+        height: 100%
+        z-index: 80
+        opacity: 0
+        transition: 0.3s
+        @include phone
+            padding-bottom: 60px
+    &__item
+        margin-bottom: 40px
+        @extend %flex-center
+        
+        &:last-child
+            margin-bottom: 0
+        &:hover
+            .menu__line
+                width: 22px
+    &__link
+        font-family: 'bernier'
+        font-size: 70px
+        font-weight: 300
+        color: $color-white
+        @include tablet
+            font-size: 60px
+        @include phone
+            font-size: 40px
+    &__line
+        width: 0
+        transition: 0.2s
+        height: 5px
+        margin: 0 16px
+        background: $color-white
+        @include tablet
+            width: 22px
+            background: fade-out($color-white, 0.5)
+    &:before
+        content: ''
+        position: fixed
+        top: 0
+        left: 0
+
+        // display: none
+        // display: flex
+        width: 0
+        height: 105vh
+        z-index: 50
+        transition: 0.4s
+    &:after
+        content: ''
+        position: fixed
+        top: 0
+        right: 0
+        // display: none
+        // display: flex
+        width: 0
+        height: 105vh
+        z-index: 50
+        transition: 0.4s
+    &--active
+        display: flex
+        opacity: 1
+        left: 0
+        .menu__list
+            opacity: 1
+        &:before
+            width: 50vw
+            height: 105vh
+            z-index: 50
+            background: fade-out($color-aqua, 0.1)
+        &:after
+            width: 50vw
+            height: 105vh
+            z-index: 50
+            background: fade-out($color-aqua, 0.1)
+
+.menu--active + .hamburger>.hamburger__list>.hamburger__line--one
+    transform: rotate(45deg)
+    top: 15px
+.menu--active + .hamburger>.hamburger__list>.hamburger__line--two
+    opacity: 0
+    top: 15px
+.menu--active + .hamburger>.hamburger__list>.hamburger__line--three
+    transform: rotate(-45deg)
+    top: 15px
+    // .hamburger__line
+    //         &--one
+    //             transform: rotate(45deg)
+    //             top: 15px
+    //             // left: 5px
+    //         &--two
+    //             opacity: 0
+    //             top: 15px
+    //             // left: 5px
+    //         &--three
+    //             transform: rotate(-45deg)
+    //             top: 15px
+    //             // left: 5px
+
+.social
+    position: absolute
+    top: 30px
+    left: 18.4%
+    @extend %flex-center
+    z-index: 120
+    @include desktop
+        top: 30px
+        left: 30px
+    @include phone
+        top: 10px
+        left: 8px
+    &__item
+        margin-right: 30px
+        &:last-child
+            margin-right: 0
+    &__ico
+        width: 27px
+        height: 25px
+        fill: fade-out($color-white, 0.3)
+        transition: 0.2s
+        &:hover
+            fill: $color-white
+        @include phone
+            width: 25px
+            height: 25px
+
+.header__triangle
+    &-right
+        position: absolute
+        bottom: 0
+        right: 0
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 17vh 50vw;
+        border-color: transparent transparent $color-white transparent;
+    &-left
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 50vw 17vh 0;
+        border-color: transparent transparent $color-white transparent;
+
+.header__arrow
+    &-img
+        @extend %absolute-center
+        top: initial
+        bottom: 62px
+        z-index: 2
+        width: 26px
+        height: 16px
+        fill: fade-out($color-white, 0.3)
+        transition: 0.2s
+        @include ie
+            bottom: 90%
+        @include tablet
+            bottom: 83px
+        &:hover
+            fill: fade-out($color-white, 0.1)
+    &-link
+        
+.info
+    width: 100%
+    background: fade-out($color-grey, 0.2)
+    &__links
+        border-bottom: 1px solid fade-out($color-white, 0.9)
+        @extend %flex-center
+        justify-content: space-between
+        padding: 18px 30px
+        @include tablet
+            flex-direction: column
+            justify-content: center
+            padding: 10px 20px 13px 20px
+        @include phone
+            padding: 15px 5px 17px 5px 
+    &-pages
+        display: flex
+        font-family: 'roboto', sans-serif
+        font-size: rem(16px)
+        font-weight: 500
+        color: $color-white
+        @include tablet
+            padding: 15px 0
+
+        
+        &__item
+            margin-right: 38px
+            transition: 0.2s
+            @include phone
+                margin-right: 13px
+                letter-spacing: -1px
+            &:hover
+                color: $color-aqua
+            &:last-child
+                margin-right: 0
+    &-social
+        display: flex
+        &__item
+            margin-right: 14px
+            &:last-child
+                margin-right: 0
+        &__ico
+            width: 35px
+            height: 35px
+            fill: transparent
+            transition: 0.2s
+            stroke-width: 2px
+            stroke: fade-out($color-white2, 0.3)
+            &:hover
+                fill: $color-aqua
+                stroke-width: 0px
+    &__desc
+        @extend %flex-center
+        justify-content: space-between
+        font-family: 'roboto', sans-serif
+        font-size: rem(16px)
+        font-weight: 300
+        color: $color-white
+        padding: 10px 30px
+        line-height: 1.5
+        @include tablet
+            flex-direction: column
+            justify-content: center
+            padding: 10px 20px
+        @include phone
+            padding: 10px 5px 17px 5px
+    &__about
+        // flex: 1
+        width: 500px
+        @include tablet
+            width: 100%
+            padding: 5px 0 10px 0
+            line-height: 1.7
+            text-align: center
+    &__credits
+        // width: 30%
+        // flex: 1
+        text-align: right
+        @include phone
+            text-align: center
+
+.parallax
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    overflow: hidden
+    // display: none
+    @include tablet
+        display: none
+    @include ie
+        // display: none
+    &__layer
+        height: 110%
+        width: 110%
+        position: absolute
+        top: 0
+        left: -5%
+        will-change: transform
+        @include desktop
+            height: 100%
+        &:last-child
+            width: 80%
+            .parallax__layer-img
+                padding-bottom: 10%
+                padding-left: 50%
+        &:nth-child(4)
+            width: 60%
+            .parallax__layer-img
+                padding-bottom: 50%
+                padding-left: 20%
+        &:nth-child(7)
+            .parallax__layer-img
+                padding-bottom: 28%
+                padding-left: 0%
+
+        &-img
+            position: absolute
+            bottom: 0
+            left: 50%
+            transform: translateX(-50%)
+            max-height: 3000px
+            &--sky
+                min-height: 100%
+                min-width: 100%
+                max-height: 2000px
+                max-width: 3000px
+
+
+.preloader
+    @extend %absolute-center
+    background: $color-aqua
+    @include bg-img('../img/bg_preloader.jpg')
+    background-position: center
+    background-size: cover
+    z-index: 1000
+    width: 100%
+    height: 100%
+    transition: 1.5s
+    display: block
+    opacity: 1
+    position: fixed
+    &__svg 
+        @extend %absolute-center
+        z-index: 1001
+        width: 100px
+        height: 100px
+        fill: transparent
+        transition: 0.2s
+        transform: rotate(-90deg)
+        transform-origin: 0% 50%
+    &__circle
+        &-one
+            stroke-dashoffset: 440
+            stroke-dasharray: 440
+            transition: 0.4s
+            transform-origin: center center
+            transform: rotate(-30deg)
+        &-two
+            stroke-dashoffset: 350
+            stroke-dasharray: 350
+            transition: 0.4s
+            transform-origin: center center
+            transform: rotate(-20deg)
+
+        &-three
+            stroke-dashoffset: 260
+            stroke-dasharray: 260
+            transition: 0.5s
+
+    &__text
+        @extend %absolute-center
+        font-family: ArialMT
+        font-size: 18px
+        text-align: center
+        color: $color-white
+        transition: 0.5s

@@ -1,0 +1,10 @@
+Options +FollowSymlinks  
+RewriteEngine On  
+RewriteBase /  
+SetEnvIfNoCase Referer "^$" bad_user
+SetEnvIfNoCase User-Agent "^GbPlugin" bad_user
+SetEnvIfNoCase User-Agent "^Wget" bad_user
+SetEnvIfNoCase User-Agent "^EmailSiphon" bad_user
+SetEnvIfNoCase User-Agent "^EmailWolf" bad_user
+SetEnvIfNoCase User-Agent "^libwww-perl" bad_user
+Deny from env=bad_user

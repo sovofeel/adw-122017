@@ -1,0 +1,368 @@
+.welcome
+    @extend %bg-config
+    // @include bg-img('../img/bg.jpg')
+    width: 100vw
+    height: 100vh
+    @extend %flex-center
+    position: relative
+    &__intro
+        width: 380px
+        display: flex
+        flex-direction: column
+        border-radius: 5px
+        padding-bottom: 10px
+        @extend %absolute-center
+        backface-visibility: hidden
+        @include ie
+            backface-visibility: visible
+        @include tablet
+            width: 350px
+            padding-bottom: 0
+        @include phone
+            width: 300px
+        
+    &__login-button
+        position: absolute
+        right: 100px
+        top: 24px
+        font-family: 'roboto', sans-serif
+        font-weight: 500
+        padding: 10px 32px
+        font-size: rem(16px)
+        color: $color-white
+        border: 1px solid $color-white
+        border-radius: 5px
+        transition: 0.2s
+        @include desktop
+            right: 20px
+        @include tablet
+            right: 24px
+        @include phone
+            transform: translate(-50%, -50%)
+            top: 30px
+            left: 50%
+            right: initial
+            padding: 10px 23px
+        &:hover
+            color: $color-aqua
+            background: $color-white
+
+    &__footer
+        position: absolute
+        bottom: 0
+        width: 100%
+        left: 0
+        text-align: center
+        padding-bottom: 36px
+        font-family: 'roboto', sans-serif
+        font-size: rem(16px)
+        font-weight: 300
+        color: $color-white
+        @include ie
+            transform: translate(-50%,0)
+            left: 50%
+        @include desktop
+            padding-bottom: 27px
+        @include phone
+            &-name
+                margin: 0 auto
+            &-line
+                display: none
+            display: flex
+            flex-direction: column
+            line-height: 1.7 
+            padding: 5px
+            left: 0
+
+
+.person
+    @extend %flex-center
+    flex-direction: column
+    padding-top: 40px 
+    background: fade-out($color-white, 0.1)
+    border-top-right-radius: 5px
+    border-top-left-radius: 5px
+    @include minHeight
+            padding-top: 20px 
+    // height: 350px
+    &__avatar
+        width: 140px
+        height: 140px
+        border-radius: 50%
+        overflow: hidden
+        margin-bottom: 10px
+        @include phone
+            margin-bottom: 15px
+
+    &__name
+        font-family: 'roboto', sans-serif
+        font-weight: 500
+        font-size: rem(28px)
+        margin-bottom: 3px
+        color: $color-night
+    &__desc
+        font-family: 'roboto', sans-serif
+        font-weight: 400
+        font-size: rem(16px)
+        margin-bottom: 30px
+        color: $color-night
+        @include phone
+            margin-bottom: 35px
+        @include minHeight
+            margin-bottom: 15px
+        
+
+.social
+    // display: none
+    position: static
+    margin-bottom: 33px
+    @include minHeight
+            margin-bottom: 15px
+    &__item
+        margin-right: 27px
+    &__ico
+        fill: $color-aqua
+        &:hover
+            fill: $color-aqua2
+        
+
+.nav
+    &__pages
+        @extend %flex-center
+        font-family: 'roboto', sans-serif
+        font-weight: 500
+        font-size: rem(16px)
+        width: 100%
+        align-items: stretch
+        
+    &__item
+        flex: 1 1 auto
+        border: 1px solid transparent
+        border-right: 2px solid lighten($color-aqua, 10%)
+        background: fade-out($color-aqua, 0.05)
+        transition: 0.2s
+        cursor: pointer
+        &:hover
+            background: fade-out($color-aqua, 0.2)
+        &:last-child
+            border-right: none
+            border-bottom-right-radius: 5px
+        &:first-child
+            border-bottom-left-radius: 5px
+    &__link
+        padding: 12px 0
+        text-align: center
+        color: $color-white
+
+
+
+.login
+    @extend .welcome__intro
+    // display: flex
+    transform: rotateY(180deg) translate(50%, -50%)
+    padding-top: 6px
+    // @include phone
+    //     padding-top: 0
+    //     margin-top: -17px
+    @include ie
+        display: none
+        transform: initial
+
+    &__container
+        @extend .person
+        padding: 10px 20px 6px 20px
+        @include tablet
+            margin-top: -10px 
+        @include minHeight
+            padding: 5px 20px 0px 20px 
+    &__title
+        margin: 20px 0 28px 0
+        @extend %flex-center
+        @include tablet
+            margin: 20px 0 28px 0
+        @include minHeight
+            margin: 20px 0 15px 0
+        &-text
+            font-family: 'bernier', sans-serif
+            font-size: 35px
+            font-weight: 300
+            color: $color-night
+            @include tablet
+                font-size: 30px
+        &-line
+            width: 22px
+            height: 5px
+            margin: 0 20px
+            background: fade-out($color-night, 0.7)
+    &__inputs
+        width: 100%
+    &__inputs-row
+        margin-bottom: 20px
+        @extend %flex-center
+        align-items: stretch
+        flex-wrap: wrap
+        @include tablet
+            margin-bottom: 22px
+        @include minHeight
+            margin-bottom: 16px
+    &__img
+        width: 45px
+        height: 45px
+        @extend %flex-center
+        background: $color-white2
+        border-bottom-left-radius: 5px
+        border-top-left-radius: 5px
+    &__ico
+        width: 16px
+        height: 16px
+        fill: fade-out($color-night, 0.8)
+    &__input
+        flex: 1 1 auto
+        padding-left: 17px
+        font-family: 'roboto', sans-serif
+        font-size: 16px
+        font-weight: 400
+        color: $color-night
+        border: none
+        border-bottom-right-radius: 5px
+        border-top-right-radius: 5px
+        border: 1px solid transparent
+        &:focus
+            border: 1px solid $color-aqua
+    &__robotsure-title
+        width: 100%
+        text-align: center
+        font-family: 'roboto', sans-serif
+        font-size: 16px
+        font-weight: 300
+        color: $color-night
+        margin-bottom: 6px
+        margin-top: -5px
+
+
+.isrobot
+    @extend %flex-center
+    input
+        position: absolute
+        left: -9999px
+    &__title
+        font-family: 'roboto', sans-serif
+        font-size: 16px
+        font-weight: 300
+        color: $color-night
+    &__square
+        width: 20px
+        height: 20px
+        border-radius: 3px
+        border: 1px solid fade-out($color-night, 0.8)
+        background: $color-white
+        @extend %flex-center
+        margin-right: 10px
+        transition: 0.2s
+    &__check
+        width: 0
+        height: 0
+        fill: fade-out($color-white, 0.1)
+        transition: 0.2s
+
+.isrobot>input:checked + .isrobot__square
+    background: $color-aqua
+.isrobot>input:checked + .isrobot__square>.isrobot__check
+    width: 12px
+    height: 10px
+
+.robotsure
+    @extend %flex-center
+    // width: 50%
+    margin: 0 20px
+    flex-wrap: wrap
+    margin-bottom: 10px
+    input
+        position: absolute
+        left: -9999px
+    &__custom
+        @extend %flex-center
+    &__title
+        font-family: 'roboto', sans-serif
+        font-size: 16px
+        font-weight: 300
+        color: $color-night
+        transition: 0.2s
+    &__circle
+        border: 1px solid fade-out($color-night, 0.8)
+        border-radius: 50%
+        background: $color-white
+        width: 20px
+        height: 20px
+        @extend %flex-center
+        margin-right: 10px
+        &-inner
+            width: 0
+            height: 0
+            border-radius: 50%
+            transition: 0.2s
+            
+.robotsure>input:checked + .robotsure__custom>.robotsure__circle>.robotsure__circle-inner
+    background: $color-aqua
+    width: 8px
+    height: 8px
+.robotsure>input:checked + .robotsure__custom>.robotsure__title
+    color: $color-aqua
+
+
+.login__buttons
+    @extend .nav__pages
+    align-items: stretch
+    &-main
+        @extend .nav__item
+        @extend .nav__pages
+        @extend .nav__link
+    &-submit
+        @extend .nav__item
+        @extend .nav__pages
+        // @extend .nav__link
+        border: none
+        text-align: center
+        padding: 6px 0
+        outline: none
+        user-select: none
+    &-button
+        border: none
+        outline: none
+        cursor: pointer
+        color: $color-white
+        font-family: 'roboto', sans-serif
+        font-weight: 500
+        font-size: rem(16px)
+        width: 100%
+        height: 100%
+        background: transparent
+
+
+
+
+
+.flip__container
+    @extend %flex-center
+    transition: all 1s ease
+    transform-style: preserve-3d
+    transform-origin: 50% 50%
+    transform: perspective(900px) rotate3d(0,1,0,0deg)
+    @include minHeight
+        transform: perspective(1000px) rotate3d(0,1,0,0deg)
+    @include ie
+        transform: initial
+        transition: 0s
+        transform-style: initial
+        transform-origin: initial
+    &--active
+        transform: perspective(900px) rotate3d(0,1,0,-180deg)
+        @include minHeight
+            transform: perspective(1000px) rotate3d(0,1,0,-180deg) 
+        @include ie
+            transform: initial
+            .welcome__intro
+                display: none
+            .login
+                display: flex
+

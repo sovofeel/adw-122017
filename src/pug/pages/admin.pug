@@ -1,0 +1,48 @@
+block variables
+
+include ../config/mixins
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="shortcut icon" href="favicon.ico" type="image/x-icon")
+        link(rel="icon" href="favicon.ico" type="image/x-icon")
+        title Админка
+        link(rel="stylesheet", href="css/works.css")
+        script(src="vue.min.js")
+    body
+        .content__works#slider
+            .content__works-left
+                .school__title
+                    .school__title-line
+                    h2.school__title-text {{ currentProject.title || 'Название' }}
+                    .school__title-line
+                h3.school__tech {{ currentProject.tech || 'Технологии' }}
+                a.school__link(:href='currentProject.href')
+                    +svg('school__link-ico', 'link')
+                    span.school__link-text {{ currentProject.linkText || 'Перейти' }}
+            .content__works-right
+                transition(name='fade' v-on:after-leave="afterLeaveCurrent")
+                    .work__current(v-if='showCurrent')
+                        img( :src="currentProject.img", alt="currentProject" class="work__current-img")
+                .work__another
+                    .work__view(@click='nextproject')
+                        transition(name='slideUp' v-on:after-leave="afterLeaveNext")
+                            .work__view-images(v-if='showNext')
+                                img(:src="nextProject.img", alt="nextProject" class="work__view-img")
+                                img(:src="nextProject2.img", alt="nextProject2" class="work__view-img--next")
+                        .work__view-overlay
+                            +svg('work__slide-down', 'arrow_down')
+                    .work__view(@click='previousproject')
+                        transition(name='slideDown' v-on:after-leave="afterLeavePrevious")
+                            .work__view-images(v-if='showPrevious')
+                                img(:src="previousProject.img", alt="previousProject" class="work__view-img")
+                                img(:src="previousProject2.img", alt="previousProject2" class="work__view-img--previous")
+                        .work__view-overlay
+                            +svg('work__slide-up', 'arrow_down')
+
+
+        script(src="js/bundle.js" defer)

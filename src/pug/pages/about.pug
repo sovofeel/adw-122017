@@ -1,0 +1,12 @@
+extends ../template
+
+block variables
+    - var title = 'Обо мне'
+    - var secClass = 'div class="menu__line"'
+    - var page = 'about'
+
+block content
+    .wrapper
+        include ../common/about/header
+        include ../common/about/content
+        include ../common/about/footer

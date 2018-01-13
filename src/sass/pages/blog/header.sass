@@ -1,0 +1,70 @@
+.header
+    width: 100vw
+    height: 100vh
+    // height: 700px
+    @extend %flex-center
+    position: relative
+    &__triangles
+        position: absolute
+        left: 0
+        bottom: -340px
+        width: 100%
+        display: flex
+        &-pic
+            display: none
+            width: 50%
+            fill: $color-white2
+            transform: scale(5)
+            
+
+.person
+    @extend %flex-center
+    flex-direction: column
+    // height: 100%
+    z-index: 1
+    padding-top: 15px
+    @include phone
+        padding-top: 0
+        padding-bottom: 100px
+    &__avatar
+        width: 140px
+        height: 140px
+        margin-bottom: 20px
+        background: #ffffff
+        border-radius: 50%
+        overflow: hidden
+        @include phone
+            margin-bottom: 25px
+.page
+    &__title
+        position: relative
+        @extend %flex-center
+        &-text
+            font-family: 'bernier', sans-serif
+            font-weight: 300
+            font-size: rem(65px)
+            line-height: 1
+            color: $color-white
+            @include phone
+                font-size: 35px
+                margin-bottom: 5px
+        &-line
+            width: 22px
+            height: 5px
+            margin: 0 16px
+            background: fade-out($color-white, 0.5)
+            @include phone
+                display: none
+    &__bg-text
+        @extend %absolute-center
+        top: 80%
+        fill: fade-out($color-white, 0.8)
+        width: 300px
+        height: 200px
+    &__desc
+        font-family: 'roboto', sans-serif
+        font-size: rem(16px)
+        font-weight: 400
+        color: $color-white
+
+

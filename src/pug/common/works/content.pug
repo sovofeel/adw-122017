@@ -1,0 +1,28 @@
+.content
+    .content__title
+        .content__title-line
+        h2.content__title-text Мои работы
+        .content__title-line
+        +svg('content__title-bg', 'works_header')
+    .content__works
+        .content__works-left
+            .school__title
+                .school__title-line
+                h2.school__title-text Сайт школы онлайн образования
+                .school__title-line
+            h3.school__tech HTML, CSS, Javascript
+            a.school__link(href='#')
+                +svg('school__link-ico', 'link')
+                span.school__link-text Посмотреть сайт
+        .content__works-right
+            .work__current
+                img(src="img/work-1.png", alt="work1" class="work__current-img")
+            .work__another
+                .work__view
+                    img(src="img/work-2.png", alt="work-2" class="work__view-img")
+                    .work__view-overlay
+                        +svg('work__slide-down', 'arrow_down')
+                .work__view
+                    img(src="img/work-3.png", alt="work-2" class="work__view-img")
+                    .work__view-overlay
+                        +svg('work__slide-up', 'arrow_down')

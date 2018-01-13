@@ -1,0 +1,123 @@
+.form
+    @extend %flex-center
+    flex-direction: column
+    // margin-bottom: 150px
+    border-radius: 5px
+    position: relative
+    overflow: hidden
+    &__container
+        padding: 45px 20px 20px 20px
+        // background: fade-out($color-white, 0.5)
+        // filter: blur(3px)
+        @extend %flex-center
+        flex-direction: column
+        @include tablet
+            padding: 30px 20px 20px 20px
+        @include phone
+            padding: 20px 18px 24px 18px
+            // width: 284px
+    &__blur
+        // opacity: 0.6
+        @include bg-img('../img/works-footer-bg.jpg')
+        @extend %bg-config
+        filter: blur(10px)
+        @extend %absolute-center
+        transform: scale(1.1) translate(-45%, -45%)
+        width: 100%
+        height: 100%
+        z-index: -1
+        background-size: 1638px
+        background-position: -629px -496px
+
+        
+    &__title
+        @extend %flex-center
+        align-items: flex-start
+        position: relative
+        width: 100%
+        margin-bottom: 25px
+        @include tablet
+            margin-bottom: 5px
+        @include phone
+            align-items: center
+        &-text
+            font-family: 'bernier', sans-serif
+            font-weight: 300
+            font-size: 35px
+            color: $color-night
+            width: 280px
+            text-align: center
+            @include tablet
+                width: 250px
+                font-size: 30px
+            @include phone
+                font-size: 21px
+                width: 175px
+        &-line
+            width: 22px
+            height: 5px
+            margin: 20px 4px
+            background: fade-out($color-night, 0.5)
+    &__inputs
+        @extend %flex-center
+        flex-direction: column
+        width: 100%
+        @include phone
+            width: 262px
+
+    &__input
+        color: $color-night
+        font-family: 'roboto', sans-serif
+        font-size: rem(16px)
+        font-weight: 500
+        width: 100%
+        border: 1px solid transparent
+        border-radius: 5px
+        padding: 15px 20px
+        margin-bottom: 18px
+        font-size: 14px
+        transition: 0.2s
+        
+        &:focus
+            border: 1px solid $color-aqua
+        &:last-child
+            margin-bottom: 0
+    &__message
+        resize: none
+        height: 140px
+
+    &__buttons
+        width: 100%
+        @extend %flex-center
+        align-items: stretch
+    &__submit    
+        flex: 1
+        padding: 12px 0
+        text-align: center
+        border-radius: 0
+        border-bottom-left-radius: 5px
+        background: $color-aqua
+        border: none
+        border-right: 2px solid lighten($color-aqua, 10%)
+        color: $color-white
+        font-family: 'roboto', sans-serif
+        font-size: rem(16px)
+        font-weight: 500
+        transition: 0.2s
+        cursor: pointer
+        &:hover
+            background: $color-aqua2
+    &__clean
+        flex: 1
+        padding: 12px 0
+        text-align: center
+        border-bottom-right-radius: 5px
+        background: $color-aqua
+        color: $color-white
+        font-family: 'roboto', sans-serif
+        font-size: rem(16px)
+        font-weight: 500
+        transition: 0.2s
+        cursor: pointer
+        &:hover
+            background: $color-aqua2

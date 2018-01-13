@@ -1,0 +1,13 @@
+.footer
+    #map
+    include ../../config/footer
+
+    .contact
+        .contact__title
+            .contact__title-line
+            .contact__title-text Контакты
+            .contact__title-line
+        ul.contact__list
+            +contactItem('skype', 'contact', '#', 'skype')
+            +contactItem('sovofeel@gmail.com', 'contact', 'mailto:sovofeel@gmail.com', 'envelope')
+            +contactItem('8(800)-555-35-35', 'contact', 'tel:88005553535', 'phone')

@@ -1,0 +1,16 @@
+.comments
+    .comments__title
+        .comments__title-line
+        h3.comments__title-text Что обо мне говорят
+        .comments__title-line
+        +svg('comments__title-bg', 'about_header')
+    .comments__views
+        .comment
+            +svg('comment__ico', 'quote')
+            p.comment__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            +commentPerson('img/avatar.png', 'Ковальчук Дмитрий', 'основатель Loftschool')
+
+        .comment
+            +svg('comment__ico', 'quote')
+            p.comment__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+            +commentPerson('img/avatar.png', 'Сабанцев Владимир', 'преподаватель')

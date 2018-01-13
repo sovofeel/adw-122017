@@ -1,0 +1,16 @@
+form(action="./php/form.php", method="post" class="form")
+    .form__container
+        .form__blur
+        .form__title
+            .form__title-line
+            h3.form__title-text Связаться со мной
+            .form__title-line
+        .form__inputs
+            input(type="text" name='name' placeholder="Имя" class="form__input")
+            input(type="email" name='email' placeholder="Email" class="form__input")
+            textarea(name="message" placeholder="Ваше сообщение" class="form__input form__message")
+    .form__buttons
+        input(type="submit" name='name' class="form__submit" value="Отправить")
+        .form__clean Очистить
+        
+

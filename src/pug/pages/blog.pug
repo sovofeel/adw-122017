@@ -1,0 +1,13 @@
+extends ../template
+
+block variables
+    - var title = 'Блог'
+    - var secClass = 'div class="menu__line"'
+    - var page = 'blog'
+
+block content
+    .wrapper
+        include ../common/blog/header
+        include ../common/blog/content
+        include ../config/footer
+        

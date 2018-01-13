@@ -1,0 +1,74 @@
+extends ../template
+
+block variables
+    - var title = 'Арсений Лобастов'
+    - var page = 'index'
+
+block content
+    .wrapper
+        .parallax#parallax
+            .parallax__layer
+                    img(src=`img/mountains/originalCompressed/layer10.png`).parallax__layer-img.parallax__layer-img--sky
+            - for (var i = 9; i > 0; i--)
+                .parallax__layer
+                    img(src=`img/mountains/originalCompressed/layer${i}.png`).parallax__layer-img
+
+        .welcome
+            .flip__container
+                .welcome__intro 
+                    .person
+                        .person__avatar
+                            img(class='person__avatar-img' src='img/avatar.png')
+                        h1.person__name Арсений Лобастов
+                        h2.person__desc Личный сайт веб-разработчика
+                        ul.social
+                            +listItem('', 'social', 'https://vk.com/sovofeel','vk')
+                            +listItem('', 'social', 'https://github.com/sovofeel', 'github')
+                            +listItem('', 'social', 'https://twitter.com/sovofeel', 'tw')
+                    ul.nav__pages
+                        +listItem('Мои работы', 'nav', 'works.html')
+                        +listItem('Обо мне', 'nav', 'about.html')
+                        +listItem('Блог', 'nav', 'blog.html')
+                .login
+                    form(action="login.php" method="post" class="login__form")
+                        .login__container
+                            .login__title
+                                .login__title-line
+                                h2.login__title-text Авторизуйтесь
+                                .login__title-line
+                            .login__inputs
+                                .login__inputs-row
+                                    .login__img
+                                        +svg('login__ico', 'login')
+                                    input(type="text" name="name"   placeholder="Логин" class="login__input")
+                                .login__inputs-row
+                                    .login__img
+                                        +svg('login__ico', 'password')
+                                    input(type="password" name="pass"   placeholder="Пароль" class="login__input")
+                                .login__inputs-row
+                                    label(for="isrobot" class="isrobot")
+                                        input(type="checkbox" id="isrobot" name="isrobot")
+                                        .isrobot__square
+                                            +svg('isrobot__check', 'check')
+                                        h6.isrobot__title Я человек
+                                .login__inputs-row
+                                    .login__robotsure-title Вы точно не робот?
+                                    label(for="yesrobot" class="robotsure")
+                                        input(type="radio", name="surerobot" id='yesrobot' value="yes")
+                                        .robotsure__custom
+                                            .robotsure__circle
+                                                .robotsure__circle-inner
+                                            h6.robotsure__title Да
+                                    label(for="norobot" class="robotsure")
+                                        input(type="radio", name="surerobot" value="no" id="norobot")
+                                        .robotsure__custom
+                                            .robotsure__circle
+                                                .robotsure__circle-inner
+                                            h6.robotsure__title Не уверен
+                        .login__buttons
+                            .login__buttons-main На главную
+                            .login__buttons-submit 
+                                button(type="submit" class="login__buttons-button") Войти
+            a.welcome__login-button(href='#') Авторизоваться
+            .welcome__footer <span class='welcome__footer-name'>Арсений Лобастов</span> <span class='welcome__footer-line'>|</span> создано с любовью в LoftSchool | 2016
+    

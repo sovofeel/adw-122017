@@ -1,0 +1,274 @@
+.content
+    @extend %flex-center
+    align-items: initial
+    @include ie
+        align-items: stretch
+    @include tablet
+        flex-direction: column
+    &__left
+        @extend %flex-center
+        align-items: initial
+        justify-content: flex-end
+        width: 50%
+        background: $color-white
+        padding: 0 16px 30px 16px
+        @include desktop
+            flex-direction: column
+            justify-content: flex-start
+            align-items: flex-end
+            padding: 0 40px 30px 80px
+        @include tablet
+            width: 100% 
+            align-items: center
+            padding: 25px 40px 30px 40px
+        @include phone
+            padding: 25px 0px 10px 0px
+
+
+            
+    &__right
+        background: $color-white2
+        @extend %flex-center
+        justify-content: flex-start
+        flex-direction: column
+        width: 50%
+        padding: 10px 10px 30px 40px
+        @include tablet
+            justify-content: center
+            align-items: center
+            padding: 45px 20px 10px 20px
+            width: 100%
+        @include phone
+            padding: 28px 0 10px 0
+
+
+.page
+    &__title
+        position: relative
+        @extend %flex-center
+        margin-bottom: 10px
+        width: 400px
+        height: 80px
+        @include desktop
+            padding-right: 40px
+            width: 480px
+        @include tablet
+            margin-bottom: 23px
+            padding-right: 0
+            max-width: 95%
+        @include phone
+            height: 40px
+            
+        &-text
+            font-family: 'bernier', sans-serif
+            font-weight: 300
+            font-size: 60px
+            color: $color-night
+            text-align: center
+            letter-spacing: 3px
+            @include tablet
+                font-size: 50px
+                letter-spacing: 0
+            @include phone
+                font-size: 34px
+                letter-spacing: 1px
+        &-line
+            width: 22px
+            height: 5px
+            margin: 0 16px
+            background: fade-out($color-night, 0.5)
+        &-bg
+            @extend %absolute-center
+            top: 40%
+            fill: fade-out($color-night, 0.92)
+            width: 370px
+            @include phone
+                width: 200px
+
+.page__about
+    @extend %flex-center
+    flex-direction: column
+    justify-content: flex-start
+    width: 450px
+    @include desktop
+        width: initial
+        max-width: 480px
+    @include tablet
+        width: 476px
+        max-width: 95%
+    &-text
+        padding-right: 50px
+        max-width: 100%
+        @include tablet
+            padding-right: 0
+    &-avatar
+        margin-bottom: 23px
+        width: 410px
+        @include desktop
+            width: 423px
+        @include tablet
+            margin-bottom: 32px
+        @include phone
+            width: 100%
+            max-width: 423px
+            margin-bottom: 15px
+    &-title
+        @extend %flex-center
+        // padding-right: 15px
+        margin-bottom: 25px
+        padding-left: 35px
+        @include tablet
+            padding-left: 0px
+            margin-bottom: 0
+        @include phone
+            margin-bottom: 7px
+        .page__title-text
+            font-size: 33px
+            width: 100px
+            letter-spacing: 1px
+            @include tablet
+                letter-spacing: 0
+                width: 70px
+            @include phone
+                width: 50px
+                font-size: 22px
+    &-desc
+        font-family: 'roboto', sans-serif
+        font-size: rem(16px)
+        font-weight: 400
+        color: $color-night
+        line-height: 1.5
+        @include phone
+            line-height: 1.75
+
+    &-paragraph
+        margin: 10px 0
+        @include tablet
+            margin: 0 0 10px 0
+
+.page__skills
+    &-title
+        @extend %flex-center
+        align-items: flex-start
+        margin-bottom: 30px
+        padding-right: 40px
+        @include desktop
+            padding-right: 30px
+        @include tablet
+            padding-right: 0
+            margin-bottom: 7px
+            align-items: center
+        @include phone
+            margin-bottom: 13px
+
+        .page__title-text
+            font-size: 33px
+            width: 230px
+            letter-spacing: initial
+            text-align: center
+            line-height: 1.3
+            letter-spacing: 1px
+            @include tablet
+                font-size: 29px
+                letter-spacing: 0
+            @include phone
+                font-size: 20px
+                width: 150px
+        .page__title-line
+            margin-top: 17px
+            @include tablet
+                margin: 10px
+
+
+    &-desc
+        margin-bottom: 45px
+        font-family: 'roboto', sans-serif
+        font-size: 16px
+        font-weight: 400
+        color: $color-night
+        max-width: 100%
+        @include tablet
+            font-size: 14px
+            width: 475px
+            line-height: 1.7
+            margin-bottom: 40px
+            max-width: 95%
+        @include phone
+            max-width: 94%
+            margin-bottom: 20px
+
+.skills
+    width: 100%
+    @include tablet
+        width: 600px
+        max-width: 100%
+    &__row
+        display: flex
+        flex-wrap: wrap
+        margin-bottom: 12px
+        @include tablet
+            justify-content: center
+            margin-bottom: 18px
+        @include phone
+            margin-bottom: 0px
+
+    &__title
+        color: $color-night
+        font-family: 'roboto'
+        font-size: 28px
+        font-weight: 500
+        width: 100%
+        margin-bottom: 10px   
+        @include tablet
+            text-align: center  
+            font-size: 21px
+            margin-bottom: 13px 
+
+
+
+.skill
+    display: block
+    height: 120px
+    width: 120px
+    margin-right: 40px
+    margin-bottom: 20px
+    border-radius: 100%
+    position: relative
+    @include desktop
+        height: 110px
+        width: 110px
+        margin-right: 35px
+    @include tablet
+        margin: 0px 20px 20px 20px
+    @include phone
+        margin: 0px 20px 30px 20px
+
+    &:last-child
+        margin-right: 0
+        @include tablet
+            margin-right: 20px
+    &:after 
+        @extend %absolute-center
+        content: attr(name)
+        color: $color-aqua
+        font-family: 'roboto'
+        font-size: 13px
+        font-weight: 500
+        text-align: center
+        line-height: 1.3
+    &__circle 
+        stroke-dashoffset: 0
+        transition: stroke-dashoffset 1s
+        will-change: stroke-dashoffset
+        stroke: darken($color-white2, 10%)
+        stroke-width: 37px
+    &__bar
+        stroke: $color-aqua
+    &__svg
+        transform: rotate(-90deg)
+        width: 120px
+        height: 120px
+        @include desktop
+            height: 110px
+            width: 110px
+
